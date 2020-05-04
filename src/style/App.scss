@@ -1,0 +1,45 @@
+$desktop-medium: 1680;
+$desktop-small: 1270;
+$screen-tight: 1110;
+$tablet-portrait: 909;
+$phone: 686;
+
+
+@mixin respond($breakpoint){
+  @if $breakpoint == $desktop-medium {
+    @media (max-width:1680px) {@content};
+  }
+  @if $breakpoint == $desktop-small {
+    @media (max-width:1270px) {@content};
+  }
+  @if $breakpoint == $tablet-portrait {
+    @media (max-width:909px) {@content};
+  }
+  @if $breakpoint == $phone {
+    @media (max-width:686px) {@content};
+  }
+}
+
+*{
+  margin:0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+.container{
+  width:65vw;
+  // background-color: yellow;
+  margin: 0 auto;
+  display:flex;
+  flex-direction: column;
+
+  @include respond($desktop-medium){
+    width: 90vw;
+  }
+  @include respond($desktop-small){
+    width: 100%;
+  }
+}
+
+@import './SearchBar.scss';
+@import './Card.scss';
+@import './BookList.scss';

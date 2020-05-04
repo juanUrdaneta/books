@@ -1,0 +1,31 @@
+.book-list{
+
+  width:100%;
+
+  // background-color: red;
+
+  display:grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  row-gap: 16px;
+
+  box-sizing: border-box;
+
+  position: relative;
+  top: 2em;
+
+  
+  @include respond($desktop-small){
+    grid-template-columns: 25% 25% 25% 25%;
+  }
+  @include respond($tablet-portrait){
+    grid-template-columns: 33% 33% 33%;
+  }
+  @include respond($phone){
+    grid-template-columns: 100%;
+  }
+  
+
+  &>.card {
+    justify-self: center;
+  }
+}
